@@ -1,0 +1,50 @@
+{
+  "name": "expresstest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "testonly": "mocha --grep",
+    "unittest": "mocha src/tests/**/*UnitTests.js",
+    "inttest": "mocha src/tests/**/*IntegrationTests.js",
+    "test": "mocha src/tests/**/*Tests.js",
+    "lint": "eslint .",
+    "start": "nodemon src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "google-auth-library": "^5.2.0",
+    "mongoose": "^5.6.8",
+    "mongoose-paginate": "^5.0.3",
+    "passport": "^0.4.0",
+    "passport-custom": "^1.0.5",
+    "request": "^2.88.0",
+    "should": "^13.2.3",
+    "sinon": "^7.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.0",
+    "supertest": "^4.0.2"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
+  }
+}

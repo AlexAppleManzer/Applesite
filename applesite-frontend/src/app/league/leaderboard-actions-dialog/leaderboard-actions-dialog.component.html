@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Actions for {{summoner.name}}</h1>
+<div mat-dialog-content>
+  <p>Alias</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="summoner.alias">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onCloseClick()" color="secondary">Close</button>
+  <button mat-raised-button (click)="deleteSummoner(summoner)" color="warn">Delete</button>
+  <button mat-raised-button (click)="updateSummoner(summoner)" color="primary">Update</button>
+</div>

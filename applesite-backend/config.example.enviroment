@@ -1,0 +1,4 @@
+RIOT_API_KEY=riotapikeyhere
+MONGODB_CONNECTION_STRING=mongodbconnectionstringhere
+GOOGLE_CLIENTID=googleclientidhere
+

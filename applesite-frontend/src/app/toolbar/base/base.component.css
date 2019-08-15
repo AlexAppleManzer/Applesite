@@ -1,0 +1,11 @@
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+.nav-buttons{
+  padding-inline-start: 10%;
+  display: flex;
+}
+
+.nav-button{
+  padding-inline-start: 20px;
+}

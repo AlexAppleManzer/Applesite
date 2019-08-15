@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Create New Summoner</h1>
+<div mat-dialog-content>
+  <p>Summoner Name</p>
+    <mat-form-field>
+        <input matInput [(ngModel)]="summoner.name">
+    </mat-form-field>
+  <p>Alias</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="summoner.alias">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="onCloseClick()" color="secondary">Close</button>
+    <button mat-raised-button (click)="createSummoner()" color="primary">Create</button>
+</div>
