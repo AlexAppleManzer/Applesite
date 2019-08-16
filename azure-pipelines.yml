@@ -20,11 +20,17 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    - task: Docker@2
+    - task: DockerCompose@0
       inputs:
-        command: 'build'
-        Dockerfile: 'applesite-backend/Dockerfile'
-    - task: Docker@2
+        containerregistrytype: 'Container Registry'
+        dockerRegistryEndpoint: 'ApplesiteContainerReg'
+        dockerComposeFile: 'docker-compose.yml'
+        action: 'Run a Docker Compose command'
+        dockerComposeCommand: 'build'
+    - task: DockerCompose@0
       inputs:
-        command: 'build'
-        Dockerfile: 'applesite-frontend/Dockerfile'
+        containerregistrytype: 'Container Registry'
+        dockerRegistryEndpoint: 'ApplesiteContainerReg'
+        dockerComposeFile: 'docker-compose.yml'
+        action: 'Run a Docker Compose command'
+        dockerComposeCommand: 'push'
