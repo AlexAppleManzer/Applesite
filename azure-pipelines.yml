@@ -39,3 +39,7 @@ stages:
         dockerComposeFile: 'docker-compose.yml'
         action: 'Run a Docker Compose command'
         dockerComposeCommand: 'push'
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ApplesiteContainerReg'
+        command: 'logout'
