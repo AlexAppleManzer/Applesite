@@ -20,6 +20,11 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ApplesiteContainerReg'
+        command: 'login'
+        addPipelineData: false
     - task: DockerCompose@0
       inputs:
         containerregistrytype: 'Container Registry'
