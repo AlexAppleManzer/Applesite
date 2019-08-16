@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   settings: {
-    backendEndpoint: ''
+    backendEndpoint: 'https://applesiteBackend.azurewebsites.net'
   }
 };
 

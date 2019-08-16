@@ -1,7 +1,7 @@
 version: '3'
 services:
   backend:
-    image: applesite-backend
+    image: alexapplemanzer/applesite:v1
     environment:
       - NODE_ENV=production
     build: 
@@ -11,16 +11,18 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - "mongo"
+      - mongo
   frontend:
-    image: applesite-frontend
+    image: alexapplemanzer/applesitefrontend:v1
     build: 
       context: ./applesite-frontend
       dockerfile: ./Dockerfile
     ports:
       - "80:80"
+    depends_on:
+      - backend
   mongo:
-    image: "mongo"
+    image: mongo:v1
     ports:
       - "27017:27017"
   
