@@ -1,6 +1,6 @@
 console.log(`Config in ${process.env.NODE_ENV} mode`);
 
-if (!process.env.RIOT_API_KEY || !process.env.GOOGLE_CLIENTID) throw new Error('env variables not found...');
+if (!process.env.RIOT_API_KEY || !process.env.GOOGLE_CLIENTID || !process.env.MONGODB_CONNECTION_STRING) throw new Error('env variables not found...');
 
 const config = {
   // riot stuff
@@ -9,7 +9,7 @@ const config = {
     Key: process.env.RIOT_API_KEY,
   },
   mongoDB: {
-    connectionString: 'mongodb://mongo:27017',
+    connectionString: process.env.MONGODB_CONNECTION_STRING,
   },
   google: {
     clientId: process.env.GOOGLE_CLIENTID,
