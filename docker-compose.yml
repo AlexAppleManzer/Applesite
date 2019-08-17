@@ -22,7 +22,7 @@ services:
     depends_on:
       - backend
   mongo:
-    image: mongo:v1
+    image: mongo
     ports:
       - "27017:27017"
   

@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class LeagueService {
-  endpoint = environment.settings.backendEndpoint;
+  endpoint = environment.settings.BACKEND_ENDPOINT;
   constructor(private httpClient: HttpClient) { }
 
   public querySummoners(params: any) : Observable<any>{

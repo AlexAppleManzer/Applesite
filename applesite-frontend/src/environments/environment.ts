@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   settings: {
-    backendEndpoint: 'https://applesiteBackend.azurewebsites.net'
+    BACKEND_ENDPOINT: 'localhost:3000'
   }
 };
 

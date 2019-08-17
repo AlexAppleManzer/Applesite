@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   settings: {
-    backendEndpoint: ''
+    BACKEND_ENDPOINT: 'localhost:3000'
   }
 };
