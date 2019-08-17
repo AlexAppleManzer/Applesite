@@ -1,7 +1,7 @@
 version: '3'
 services:
   backend:
-    image: alexapplemanzer/applesite:v1
+    image: alexapplemanzer/applesite:latest
     environment:
       - NODE_ENV=production
     build: 
@@ -13,7 +13,7 @@ services:
     depends_on:
       - mongo
   frontend:
-    image: alexapplemanzer/applesitefrontend:v1
+    image: alexapplemanzer/applesitefrontend:latest
     build: 
       context: ./applesite-frontend
       dockerfile: ./Dockerfile
