@@ -13,7 +13,6 @@ function routes() {
     .get(controller.get)
     .put(passport.authenticate('google-id-token', { session: false }), controller.put)
     .delete(passport.authenticate('google-id-token', { session: false }), controller.del);
-  // .patch(controller.patch)
   return summonersRouter;
 }
 

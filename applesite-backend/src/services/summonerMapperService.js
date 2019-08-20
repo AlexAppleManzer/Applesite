@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 const Summoner = require('../models/summonerModel');
 
-function mapperService() {
+function summonerMapperService() {
   function summonerDTOtoEntity(dto) {
     const entity = new Summoner();
     entity.name = dto.name;
@@ -31,4 +31,4 @@ function mapperService() {
   return { summonerDTOtoEntity, summonerEntitytoDTO, summonerEntityArraytoDTO };
 }
 
-module.exports = mapperService();
+module.exports = summonerMapperService();

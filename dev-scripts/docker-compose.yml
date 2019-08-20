@@ -1,0 +1,31 @@
+version: '3'
+services:
+  backend:
+    image: alexapplemanzer/applesite:dev
+    environment:
+      NODE_ENV: development
+      RIOT_API_KEY: ${RIOT_API_KEY:?apikey}
+      MONGODB_CONNECTION_STRING: mongodb://mongo:27017
+      GOOGLE_CLIENTID: ${GOOGLE_CLIENTID:?clientid}
+    build: 
+      context: ../applesite-backend/
+      dockerfile: ./Dockerfile
+    command: node ./src/app.js
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+  frontend:
+    image: alexapplemanzer/applesitefrontend:dev
+    build: 
+      context: ../applesite-frontend/
+      dockerfile: ./Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+  

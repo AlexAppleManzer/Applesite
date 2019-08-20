@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const passport = require('passport');
 // eslint-disable-next-line prefer-destructuring
 const CustomStrategy = require('passport-custom').Strategy;
@@ -24,7 +25,17 @@ function googleAuth(app) {
         idToken: req.token,
         audience: config.jwt.clientId,
       });
-      const user = await User.findById(ticket.getPayload().sub).exec();
+      const payload = ticket.getPayload();
+      const user = await User.findById(payload.sub).exec();
+
+      if (!user) {
+        const newUser = new User();
+        newUser._id = payload.id;
+        newUser.email = payload.email;
+        newUser.name = payload.name;
+        newUser.roles = [];
+        done(null, user);
+      }
 
       done(null, user);
     },

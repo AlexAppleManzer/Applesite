@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   settings: {
-    BACKEND_ENDPOINT: 'localhost:3000'
+    BACKEND_ENDPOINT: 'http://localhost:3000'
   }
 };
 

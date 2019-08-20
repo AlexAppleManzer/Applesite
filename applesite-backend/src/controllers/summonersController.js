@@ -81,11 +81,6 @@ function summonersController() {
     }
   }
 
-  // eslint-disable-next-line no-unused-vars
-  function patch(req, res) {
-    // throw new NotImplementedException("Patch is not implemented yet...");
-  }
-
   async function del(req, res) {
     if (!req.params.id) {
       res.status(400);
@@ -101,7 +96,7 @@ function summonersController() {
   }
 
   return {
-    post, get, query, put, patch, del,
+    post, get, query, put, del,
   };
 }
 
